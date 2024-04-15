@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+<div class="container">
+<form class="form" method="post">
+    <p class="title">Register </p>
+    <p class="message">Bienvenido, por favor registrate en nuestra página </p>
+        <div class="flex">
+        <label>
+            <input required="" placeholder="" type="email" id="correo" name="correo" class="input">
+            <span>Correo electrónico</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="password" id="password" name="password" class="input">
+            <span>Contraseña</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="text" id="fullname" name="fullname" class="input">
+            <span>Nombre completo</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="text" id="fechaN" name="fechaN" class="input">
+            <span>Fecha de nacimiento</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="text" id="telefono" name="telefono" class="input">
+            <span>Teléfono</span>
+        </label>
+        <label>
+            <input required="" placeholder="" type="text" id="direccion" name="direccion" class="input">
+            <span>Dirección</span>
+        </label>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    </div>  
+    <button class="submit" type="submit">Registrate</button>
+    <p class="signin">¿Ya tienes cuenta? <a href="{{ url_for('login') }}">Iniciar Sesión</a> </p>
+</form>
+</div>
+</body>
+</html>
